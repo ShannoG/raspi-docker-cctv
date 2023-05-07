@@ -1,0 +1,32 @@
+mqtt:
+  host: hass
+  #  user: mqbroker
+  #password: mqbroker
+record:
+  enabled: True
+  retain:
+    days: 1
+  events:
+    retain:
+      default: 90
+cameras:
+  garage:
+    ffmpeg:
+      hwaccel_args:
+        - -hwaccel
+        - auto
+      inputs:
+         - path: rtsp://updateme:updateme@updateme/Streaming/Channels/201
+          roles:
+            - rtmp
+            - detect
+
+detectors:
+  cpu1:
+    type: cpu
+  cpu2:
+    type: cpu
+  cpu3:
+    type: cpu
+  cpu4:
+    type: cpu
