@@ -31,7 +31,7 @@ services:
     image: blakeblackshear/frigate:stable-amd64
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/storage_vg/docker_services/frigate/config:/config
+      - ./data/frigate/config:/config
       - /mnt/storage_vg/frigate_storage/media:/media
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache
